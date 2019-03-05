@@ -6,10 +6,10 @@ import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.boot.web.servlet.support.SpringBootServletInitializer;
 import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.context.annotation.ComponentScan;
-import com.example.hello2.random.RealRandom;
+
+import com.example.hello.random.RealRandom;
 
 @SpringBootApplication
-@ComponentScan("com.example.hello2.random")
 public class HelloApplication extends SpringBootServletInitializer {
 	
 	@Override

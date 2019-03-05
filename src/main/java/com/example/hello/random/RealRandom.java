@@ -1,4 +1,4 @@
-package com.example.hello2.random;
+package com.example.hello.random;
 
 import java.util.Random;
 
@@ -8,15 +8,16 @@ import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 
 @Component
+@Scope(ConfigurableBeanFactory.SCOPE_PROTOTYPE)
 @Primary
-//@Scope(ConfigurableBeanFactory.SCOPE_PROTOTYPE)
-public class RealRandomV2 implements MyRandom {
+public class RealRandom implements MyRandom {
 	
 	public String number;
 
 	@Override
 	public int nextInt(int bound) {
-		return 5555;
+		throw new MyRandomException();
+//		return new Random().nextInt(bound);
 	}
 	
 }

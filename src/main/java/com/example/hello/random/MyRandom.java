@@ -1,4 +1,4 @@
-package com.example.hello2.random;
+package com.example.hello.random;
 
 public interface MyRandom {
 	int nextInt(int bound);
