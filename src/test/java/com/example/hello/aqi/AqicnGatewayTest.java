@@ -27,7 +27,8 @@ public class AqicnGatewayTest {
 		String target = "thailand/pathum-thani/bangkok-university-rangsit-campus";
         AqiResponse expectedResponse = new AqiResponse(new Data(1));
         
-        given(restTemplate.getForObject("http://localhost/"+target+"/?token=xxxx", AqiResponse.class))
+        String targetUrl = "http://localhost/"+ target +"/?token=xxxx";
+		given(restTemplate.getForObject(targetUrl, AqiResponse.class))
                 .willReturn(expectedResponse);
 
         Optional<AqiResponse> actualResponse = gateway.fetchData(target);
@@ -40,7 +41,8 @@ public class AqicnGatewayTest {
 		gateway = new AqicnGateway(restTemplate, "http://localhost", "xxxx");
 		
 		String target = "thailand/pathum-thani/bangkok-university-rangsit-campus";
-        given(restTemplate.getForObject("http://localhost/"+target+"/?token=xxxx", AqiResponse.class))
+        String targetUrl = "http://localhost/"+ target +"/?token=xxxx";
+		given(restTemplate.getForObject(targetUrl, AqiResponse.class))
             .willThrow(new RestClientException("something went wrong"));
 
         Optional<AqiResponse> actualResponse = gateway.fetchData(target);

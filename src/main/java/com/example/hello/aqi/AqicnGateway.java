@@ -25,10 +25,15 @@ public class AqicnGateway {
     }
 
     public Optional<AqiResponse> fetchData(String target) {
-        String targetUrl = String.format("%s/%s/?token=%s", url, target, token);
+    	
+        String targetUrl 
+               = String.format("%s/%s/?token=%s", url, target, token);
 
         try {
-            return Optional.ofNullable(restTemplate.getForObject(targetUrl, AqiResponse.class));
+        	
+            return Optional.ofNullable(restTemplate.getForObject(
+            		                         targetUrl, AqiResponse.class));
+            
         } catch (RestClientException e) {
             return Optional.empty();
         }
