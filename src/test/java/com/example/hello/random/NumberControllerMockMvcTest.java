@@ -42,16 +42,17 @@ public class NumberControllerMockMvcTest {
 		given(stubRandom.nextInt(10)).willReturn(5555);
 		
 		// Call API HTTP response code = 200
-		// Convert JSON message to Object
 		String response = 
 				this.mvc.perform(get("/number"))
 				.andExpect(status().isOk())
 				.andReturn()
 				.getResponse().getContentAsString();
+		
+		// Convert JSON message to Object
 		ObjectMapper mapper = new ObjectMapper();
 		NumberControllerResponse actual =
-		   mapper.readValue(response, 
-				   NumberControllerResponse.class);
+							   mapper.readValue(response, 
+									   NumberControllerResponse.class);
 		
 		// Assert
 		assertEquals("5555", actual.getValue());

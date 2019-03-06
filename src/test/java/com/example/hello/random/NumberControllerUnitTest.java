@@ -33,7 +33,8 @@ public class NumberControllerUnitTest {
 
 	@Test
 	public void success() throws Exception {
-		NumberControllerResponse expected = new NumberControllerResponse("5555");
+		NumberControllerResponse expected 
+		           = new NumberControllerResponse("5555");
 		
 		// Stub
 		given(stubRandom.nextInt(10)).willReturn(5555);

@@ -16,8 +16,7 @@ public class RealRandom implements MyRandom {
 
 	@Override
 	public int nextInt(int bound) {
-		throw new MyRandomException();
-//		return new Random().nextInt(bound);
+		return new Random().nextInt(bound);
 	}
 	
 }
