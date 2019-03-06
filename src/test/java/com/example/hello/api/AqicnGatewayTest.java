@@ -1,4 +1,4 @@
-package com.example.hello.aqi;
+package com.example.hello.api;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -6,6 +6,10 @@ import org.mockito.Mock;
 import org.mockito.junit.MockitoJUnitRunner;
 import org.springframework.web.client.RestClientException;
 import org.springframework.web.client.RestTemplate;
+
+import com.example.hello.api.AqiResponse;
+import com.example.hello.api.AqicnGateway;
+import com.example.hello.api.Data;
 
 import static org.junit.Assert.assertEquals;
 import static org.mockito.BDDMockito.given;

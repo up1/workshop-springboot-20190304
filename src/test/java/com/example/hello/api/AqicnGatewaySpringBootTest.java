@@ -1,4 +1,4 @@
-package com.example.hello.aqi;
+package com.example.hello.api;
 
 import static com.github.tomakehurst.wiremock.client.WireMock.aResponse;
 import static com.github.tomakehurst.wiremock.client.WireMock.equalTo;
@@ -21,6 +21,9 @@ import org.springframework.http.MediaType;
 import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.util.ResourceUtils;
 
+import com.example.hello.api.AqiResponse;
+import com.example.hello.api.AqicnGateway;
+import com.example.hello.api.Data;
 import com.github.tomakehurst.wiremock.junit.WireMockRule;
 
 @RunWith(SpringRunner.class)
@@ -51,7 +54,8 @@ public class AqicnGatewaySpringBootTest {
         assertEquals(expectedResponse, response);
     }
     
-    public static String read(String filePath) throws IOException {
+    public static String read(String filePath) 
+    		throws IOException {
         File file = ResourceUtils.getFile(filePath);
         return new String(Files.readAllBytes(file.toPath()));
     }
