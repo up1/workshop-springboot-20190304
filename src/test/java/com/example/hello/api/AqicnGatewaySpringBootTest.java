@@ -28,7 +28,7 @@ import com.github.tomakehurst.wiremock.junit.WireMockRule;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
-public class AqicnGatewaySpringBootTest {
+public class AqicnGatewaySpringBootTest { 
 	
 	@Autowired
 	private AqicnGateway gateway;

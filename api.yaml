@@ -1,0 +1,30 @@
+-  request:
+      method: GET
+      url: /name/pui
+ 
+   response:
+      status: 200
+      headers:
+         content-type: application/json
+      file: 200.json
+
+-  request:
+      method: GET
+      url: /name/pui3
+ 
+   response:
+      status: 200
+      latency: 5000
+      headers:
+         content-type: application/json
+      file: 200.json
+
+-  request:
+      method: GET
+      url: /name/pui2
+ 
+   response:
+      status: 200
+      headers:
+         content-type: application/json
+      file: 404.json

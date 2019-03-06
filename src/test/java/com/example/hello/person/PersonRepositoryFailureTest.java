@@ -1,7 +1,9 @@
 package com.example.hello.person;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertTrue;
 
 import java.util.Optional;
@@ -14,24 +16,20 @@ import org.springframework.test.context.junit4.SpringRunner;
 
 @RunWith(SpringRunner.class)
 @DataJpaTest
-public class PersonRepositoryTest {
+public class PersonRepositoryFailureTest {
 	
 	@Autowired
 	private PersonRepository repository;
 	
 	@Test
-	public void success() {
-		// Prepare data
-		Person somkiat = new Person("Somkiat", "Pui");
-		repository.save(somkiat);
-		
+	public void data_not_found() {
 		// Find by lastname
 		Optional<Person> someone = repository.findByLastName("Pui");
 		
 		// Check result
-		assertTrue(someone.isPresent());
-		assertNotNull(someone.get());
-		assertEquals("Somkiat", someone.get().getFirstName());
+		assertNotNull(someone);
+		assertFalse(someone.isPresent());
+		assertEquals(Optional.empty(), someone);
 	}
 
 }

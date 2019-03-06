@@ -1,0 +1,52 @@
+{
+	"info": {
+		"_postman_id": "afbce93a-c7d8-4820-9d21-ade64e0c5ced",
+		"name": "xxx",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": " http://localhost:8088/name/pui",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "f32ef3ee-e361-4089-8ec8-a7d21148ab56",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"pm.test(\"Your test name\", function () {",
+							"    var jsonData = pm.response.json();",
+							"    pm.expect(jsonData.name).to.eql('Somkiat pui 2');",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:8088/name/pui",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8088",
+					"path": [
+						"name",
+						"pui"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
